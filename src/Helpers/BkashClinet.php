@@ -31,10 +31,11 @@ class BkashClinet
             'password'=>$this->password,
         ])
             ->post("{$this->baseUrl}/tokenized/checkout/token/grant", [
-                'app_key'    => $this->appKey,
-                'app_secret' => $this->appSecret,
+                'app_key'    => $this->apikey,
+                'app_secret' => $this->apisecret,
             ]);
 
+        dd($response);
         if ($response->successful()) {
             return $response->json()['id_token'];
         }
