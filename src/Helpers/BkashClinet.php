@@ -32,10 +32,10 @@ class BkashClinet
             'password' => $this->password,
         ];
 
-        $body = [
+        $body = json_encode([
             'app_key' => $this->apikey,
             'app_secret' => $this->apisecret,
-        ];
+        ]);
 
 
 
