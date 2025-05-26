@@ -1,0 +1,19 @@
+{
+    "name": "trodevit/trodevpay",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^12.0",
+        "illuminate/database": "^12.0",
+        "illuminate/routing": "^12.0",
+        "illuminate/container": "^10.0 || ^11.0 || ^12.0",
+        "illuminate/http": "^10.0 || ^11.0 || ^12.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TrodevIT\\Trodevpay\\": "src/"
+        }
+    },
+
+    "minimum-stability": "dev"
+}
