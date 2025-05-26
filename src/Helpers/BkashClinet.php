@@ -25,8 +25,8 @@ class BkashClinet
     public function getToken()
     {
         $response = Http::withHeaders([
-            'Content-Type' => 'application/json',
-            'Accept' => 'application/json',
+//            'Content-Type' => 'application/json',
+//            'Accept' => 'application/json',
             'username'=>$this->username,
             'password'=>$this->password,
         ])->asJson()->post("{$this->baseUrl}/tokenized/checkout/token/grant", [
