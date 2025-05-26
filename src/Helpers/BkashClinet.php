@@ -24,23 +24,23 @@ class BkashClinet
 
     public function getToken()
     {
-        $response = Http::withHeaders([
-//            'Content-Type' => 'application/json',
-//            'Accept' => 'application/json',
-            'username'=>$this->username,
-            'password'=>$this->password,
-        ])->asJson()->post("{$this->baseUrl}/tokenized/checkout/token/grant", [
-                'app_key'    => $this->apikey,
-                'app_secret' => $this->apisecret,
-            ]);
+        $url = "{$this->baseUrl}/tokenized/checkout/token/grant";
+        $header = [
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+            'username' => $this->username,
+            'password' => $this->password,
+        ];
 
-        dd($response);
+        $body = [
+            'app_key' => $this->apikey,
+            'app_secret' => $this->apisecret,
+        ];
 
-        if ($response->successful()) {
-            dd('id_token', $response->json()['id_token']);
-            return $response->json()['id_token'];
-        }
 
-        throw new \Exception('Failed to retrieve token: ' . $response->body());
+
+        $response = Http::withHeaders($header)->post($url, $body);
+
+        dd($response->json());
     }
 }
