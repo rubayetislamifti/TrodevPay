@@ -29,8 +29,7 @@ class BkashClinet
             'Accept' => 'application/json',
             'username'=>$this->username,
             'password'=>$this->password,
-        ])
-            ->post("{$this->baseUrl}/tokenized/checkout/token/grant", [
+        ])->asJson()->post("{$this->baseUrl}/tokenized/checkout/token/grant", [
                 'app_key'    => $this->apikey,
                 'app_secret' => $this->apisecret,
             ]);
