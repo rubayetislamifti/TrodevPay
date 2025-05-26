@@ -35,7 +35,7 @@ class BkashClinet
                 'app_secret' => $this->apisecret,
             ]);
 
-        dd($response);
+        dd('sex');
         if ($response->successful()) {
             return $response->json()['id_token'];
         }
